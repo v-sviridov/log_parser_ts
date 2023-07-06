@@ -1,4 +1,4 @@
-# log_parser_ts
+# Simple log parser with plugins
 
 How to use:
 1. Install node.js
@@ -28,6 +28,7 @@ How to use:
 - `src` - typescript source code of a project business logic
 - `config.json` - config file with settings for parsing and analyse logs
 - `Plugins` - plugins for parsing and analyse logs
-- `logs` - logs of a project
-- 'Input' - input files for parsing and analyse logs
+- `Logs` - logs of a project
+- `Input` - input files for parsing and analyse logs
 
+You should change logParser.ts to customise parsing your logs

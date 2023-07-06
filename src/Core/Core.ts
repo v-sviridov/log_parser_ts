@@ -21,15 +21,7 @@ export class Core {
     logger.info('//----');
     logger.info(`Config file: ${args.c}, verbose: ${!!args.v}`);
     Core.input = new ReadFile(ConfigModule.getConfig());
-    // // eslint-disable-next-line @typescript-eslint/no-var-requires
-    // const { initAnalyticsPlugins } = require(path.join(
-    //   process.cwd(),
-    //   ConfigModule.getConfig().plugins,
-    //   'analytics'
-    // ));
     initPlugins(Core.input);
-    // const pluginsCount = initAnalyticsPlugins(Core.input);
-    // logger.info(`${pluginsCount} analytics inited`);
   }
   static process() {
     Core.input.processFiles();
