@@ -1,0 +1,8 @@
+{
+  "input": "Input",
+  "ouput": "Oupput",
+  "plugins": "Plugins",
+  "logPath": "Log",
+  "logLevel": "info",
+  "verbose": false
+}
