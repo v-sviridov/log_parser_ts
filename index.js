@@ -1,8 +1,10 @@
-const yargs = require('yargs/yargs');
-const { hideBin } = require('yargs/helpers');
-const { ConfigModule, logger, LoggerModule, readFile, initPlugins, Core } = require('./build');
+/* eslint-disable @typescript-eslint/no-var-requires */
+try {
+  //  @typescript-eslint/no-var-requires
+  const yargs = require('yargs/yargs');
+  const { hideBin } = require('yargs/helpers');
+  const { Core } = require('./build');
 
-function proceedCLI() {
   const args = yargs(hideBin(process.argv))
     .option('verbose', {
       alias: 'v',
@@ -18,6 +20,6 @@ function proceedCLI() {
     .parse();
   Core.init(args);
   Core.process();
+} catch (e) {
+  console.log('Build not found, run npm run build');
 }
-
-proceedCLI();
