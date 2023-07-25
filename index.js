@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 try {
+  //  @typescript-eslint/no-var-requires
   const yargs = require('yargs/yargs');
   const { hideBin } = require('yargs/helpers');
   const { Core } = require('./build');
