@@ -1,12 +1,13 @@
 import fs from 'fs';
 import { logger } from '../../../logger';
 const ROWS_LIMIT = 100000;
+type Row = string[];
 
 export class TableTxt {
   private header: string[] = [];
   private headerSize: number[] = [];
   private title = '';
-  private rows: [string[]] = [[]];
+  private rows: Row[] = [];
   private output: fs.WriteStream;
   private tableLine = '';
   private sortField = '';
@@ -90,7 +91,7 @@ export class TableTxt {
       this.output.write(`${line}\r`);
       this.output.write(`${this.tableLine}\r`);
     });
-    this.rows = [[]];
+    this.rows = [];
   }
   printTable() {
     if (!this.tableHeaderPrinted) {
