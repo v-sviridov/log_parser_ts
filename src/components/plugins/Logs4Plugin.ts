@@ -42,11 +42,11 @@ export class Logs4Plugin extends BasePlugin {
 
   processLine(line: string, fileName: string) {
     const logs4LogObj = this.parser.parseLine(line);
-    this.outputService(logs4LogObj, fileName);
+    this.outputService(logs4LogObj, fileName, line);
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  outputService(_obj: ILogs4LogObj, _fileName: string): void {
+  outputService(_obj: ILogs4LogObj, _fileName: string, _line: string): void {
     logger.debug('Logs4Plugin outputService');
   }
 }

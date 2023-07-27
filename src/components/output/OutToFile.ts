@@ -53,4 +53,7 @@ export class OutToFile {
     this.output.write(`${this.title}\r\r`);
     this.output.write(`Plugin: ${this.pluginName}\r\r`);
   }
+  printLine(line: string) {
+    this.output.write(`${line}\r`);
+  }
 }

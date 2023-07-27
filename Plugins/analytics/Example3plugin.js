@@ -1,4 +1,5 @@
 'use strict';
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { Logs4Plugin, TableTxt, Logs4MsgType } = require('../../build');
 
 class Example3 extends Logs4Plugin {
@@ -14,7 +15,7 @@ class Example3 extends Logs4Plugin {
   }
 
   outputService(obj, fileName) {
-    if (obj.msgType === Logs4MsgType.LOG_TYPE && obj.logLevel != 'DEBUG') {
+    if (obj.msgType === Logs4MsgType.LOG_TYPE && obj.logLevel !== 'DEBUG') {
       const lineNumber = `${this.inputFiles[fileName].fileNb}: ${this.inputFiles[fileName].lineNb}`;
       this.table1.addRow([lineNumber, obj.dateTime, obj.logLevel, obj.msg, obj.payload]);
     }
