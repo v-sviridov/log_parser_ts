@@ -1,4 +1,5 @@
 'use strict';
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { Logs4Plugin, TableTxt, Logs4MsgType } = require('../../build');
 
 class Example1 extends Logs4Plugin {

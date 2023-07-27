@@ -1,5 +1,6 @@
 'use strict';
-// Object.defineProperty(exports, "__esModule", { value: true });
+'use strict';
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { Logs4Plugin, TableTxt, Logs4MsgType } = require('../../build');
 class Example2 extends Logs4Plugin {
   getPluginName() {
@@ -12,13 +13,13 @@ class Example2 extends Logs4Plugin {
     this.table.setHeader(['PodName', 'Error Counts']);
     this.table.addTitle('Example of Table title. Pod Errors count.');
     this.table.setSort('Error Counts', false);
-    //this.table2.setSort('PodName');
     this.podErrSummary = {};
   }
   addSummary(podName) {
     this.podErrSummary[podName] = this.podErrSummary[podName] ? this.podErrSummary[podName] + 1 : 1;
   }
-  outputService(obj, fileName) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  outputService(obj, _fileName) {
     if (obj.msgType === Logs4MsgType.POD_MSG_TYPE && obj.logLevel === 'ERR') {
       this.addSummary(obj.podName);
     }
