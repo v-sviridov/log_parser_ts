@@ -3,6 +3,6 @@
   "output": "Output",
   "plugins": "Plugins",
   "logPath": "Log",
-  "logLevel": "info",
+  "logLevel": "debug",
   "verbose": false
 }

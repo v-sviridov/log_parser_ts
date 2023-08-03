@@ -19,4 +19,16 @@ describe('ConfigModule', () => {
     const config = ConfigModule.getConfig();
     expect(config).toEqual({ ...defaultConfig, verbose: true });
   });
+  it('should return config from config file', () => {
+    const configPath = `${__dirname}/config.json`;
+    ConfigModule.init(false, configPath);
+    const config = ConfigModule.getConfig();
+    expect(config).toEqual({ ...defaultConfig, verbose: false, logLevel: 'debug' });
+  });
+  it('should return config from config file and verbose true', () => {
+    const configPath = `${__dirname}/config.json`;
+    ConfigModule.init(true, configPath);
+    const config = ConfigModule.getConfig();
+    expect(config).toEqual({ ...defaultConfig, verbose: true, logLevel: 'debug' });
+  });
 });
