@@ -10,7 +10,7 @@
     "dobby": "./bin/cli-launch.js"
   },
   "scripts": {
-    "start": "node ./bin/cli-launch.js",
+    "start": "node ./index.js",
     "build": "npm run build-ts",
     "clean": "tsc --build --clean",
     "build-ts": "tsc --project tsconfig.prod.json",
